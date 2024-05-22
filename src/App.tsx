@@ -1,12 +1,14 @@
-import './App.css'
+import Header from "./Header"
+import Body from "./Body"
+import Footer from "./Footer"
 
 function App() {
     return (
         <>
-            <div className="flex flex-col divide-y-2 divide-blue-300">
-                <h1 className={"px-4 py-1"}>Forum</h1>
-                <h1 className={"px-4 py-1"}>Body</h1>
-                <h1 className={"px-4 py-1"}>Footer</h1>
+            <div className="flex flex-col">
+                <Header />
+                <Body />
+                <Footer />
             </div>
         </>
     )
