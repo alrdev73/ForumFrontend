@@ -19,12 +19,10 @@ export default function CategoryList() {
     }, [refresh]);
 
     return (
-        <div>
-            {categories.map((category : CategoryProps) => {
-                return (
-                    <Category name={category.name}/>
-                );
-            })}
+        <div className={"px-4 py-4 space-y-2"}>
+            {categories.map((category : CategoryProps) =>
+                <Category name={category.name} subforums={category.subforums}/>
+            )}
         </div>
     )
 }
