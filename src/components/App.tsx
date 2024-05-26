@@ -4,13 +4,11 @@ import Footer from "./Footer.tsx"
 
 function App() {
     return (
-        <>
-            <div className="flex flex-col">
-                <Header />
-                <Body />
-                <Footer />
-            </div>
-        </>
+        <div className="flex flex-col bg-cadet-gray h-screen overflow-hidden">
+            <Header />
+            <Body />
+            <Footer />
+        </div>
     )
 }
 

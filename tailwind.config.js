@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-      'header-green': '#1A4D2E',
-      'category-title-green': '#4F6F52',
-      'category-odd-child-beige': '#E8DFCA',
-      'background-beige': '#F5EFE6'
+        'platinum': '#DFE0E2',
+        'cadet-gray': '#A2AEBB',
+        'moonstone': '#75ABBC',
+        'pacific-cyan': '#23b5d3',
+        'rich-black': '#071013'
       }
     },
   },

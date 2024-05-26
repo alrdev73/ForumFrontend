@@ -8,11 +8,11 @@ export interface CategoryProps {
 
 export default function Category({id, name, subforums}: CategoryProps) {
     return (
-        <div className={""}>
-            <div className={"rounded-t-lg px-2 grid grid-cols-3 gap-4 content-top bg-category-title-green text-neutral-100"}>
-                <h1>{name}</h1>
-                <h1 className={"text-center"}>Replies</h1>
-                <h1 className={"text-center"}>Threads</h1>
+        <div>
+            <div className={"rounded-t-lg px-2 py-2 flex content-top bg-moonstone"}>
+                <h1 className={"flex-none w-1/2"}>{name}</h1>
+                <h1 className={"flex-auto text-center"}>Replies</h1>
+                <h1 className={"flex-auto text-center"}>Threads</h1>
             </div>
             <div>
                 {subforums?.map((subforum: SubforumProp) =>

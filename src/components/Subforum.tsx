@@ -8,13 +8,16 @@ export interface SubforumProp {
 
 export default function Subforum({id, name, description, replies, threads} : SubforumProp) {
     return (
-        <div className={"px-4 odd:bg-category-odd-child-beige even:bg-neutral-100 last:shadow-md last:rounded-b-lg grid grid-cols-3 gap-4"}>
-            <div>
-                <h1>{name}</h1>
-                <h2 className={"font-light"}>{description}</h2>
+        <div className={"items-center odd:bg-neutral-300 even:bg-platinum last:shadow-md last:rounded-b-lg flex"}>
+            <div className={"flex w-1/2 items-center"}>
+                <img className={"scale-75"} src={"/placeholder-subforum.jpg"} alt={"subforum image"}></img>
+                <div className={"flex-none"}>
+                    <h1>{name}</h1>
+                    <h2 className={"font-light italic"}>{description}</h2>
+                </div>
             </div>
-            <h1 className={"text-center"}>{replies}</h1>
-            <h1 className={"text-center"}>{threads}</h1>
+            <h1 className={"flex-auto text-center"}>{replies}</h1>
+            <h1 className={"flex-auto text-center"}>{threads}</h1>
         </div>
     )
 }

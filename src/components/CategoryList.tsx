@@ -7,7 +7,7 @@ export default function CategoryList() {
     const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
-        fetch("https://localhost:44317/api/Categories")
+        fetch("http://localhost:8080/api/Categories")
             .then((res) => {
                 console.log(res)
                 return res.json()
@@ -19,7 +19,7 @@ export default function CategoryList() {
     }, [refresh]);
 
     return (
-        <div className={"px-4 py-4 space-y-2"}>
+        <div className={"px-4 py-2.5 space-y-2"}>
             {categories.map((category : CategoryProps) =>
                 <Category name={category.name} subforums={category.subforums}/>
             )}
