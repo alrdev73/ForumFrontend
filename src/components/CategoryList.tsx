@@ -4,7 +4,6 @@ import {CategoryProps} from "./Category.tsx"
 
 export default function CategoryList() {
     const [categories, setCategories] = useState([]);
-    const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
         fetch("http://localhost:8080/api/Categories")
@@ -16,7 +15,7 @@ export default function CategoryList() {
                 setCategories(data);
             })
             .catch((err) => console.error(err));
-    }, [refresh]);
+    }, []);
 
     return (
         <div className={"px-4 py-2.5 space-y-2"}>

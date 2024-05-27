@@ -12,6 +12,9 @@ export default {
         'moonstone': '#75ABBC',
         'pacific-cyan': '#23b5d3',
         'rich-black': '#071013'
+      },
+      scale: {
+        '10': '0.1'
       }
     },
   },
