@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import Category from "./Category.tsx";
-import {CategoryProps} from "./Category.tsx"
+import SubforumList from "./SubforumList.tsx";
+import {SubforumListProp} from "./SubforumList.tsx"
 
 export default function CategoryList() {
     const [categories, setCategories] = useState([]);
@@ -18,9 +18,9 @@ export default function CategoryList() {
     }, []);
 
     return (
-        <div className={"px-4 py-2.5 space-y-2"}>
-            {categories.map((category : CategoryProps) =>
-                <Category name={category.name} subforums={category.subforums}/>
+        <div>
+            {categories.map((category : SubforumListProp) =>
+                    <SubforumList name={category.name} subforums={category.subforums}/>
             )}
         </div>
     )

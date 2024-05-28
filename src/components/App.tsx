@@ -1,9 +1,10 @@
 import Header from "./Header.tsx"
-import Home from "./Home.tsx"
+import Home from "./home/Home.tsx"
 import Footer from "./Footer.tsx"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import NoPage from "./NoPage.tsx";
-import About from "./About.tsx";
+import NoPage from "./no-page/NoPage.tsx";
+import About from "./about/About.tsx";
+import ThreadList from "./subforum/ThreadList.tsx";
 
 function App() {
     return (
@@ -12,9 +13,10 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path={"/"}>
-                        <Route index element={<Home />}></Route>
-                        <Route path={"about"} element={<About />}></Route>
-                        <Route path={"*"} element={<NoPage />}></Route>
+                        <Route index element={<Home />}/>
+                        <Route path={"about"} element={<About />}/>
+                        <Route path={"*"} element={<NoPage />}/>
+                        <Route path={"viewforum/:forumId"} element={<ThreadList/>}/>
                     </Route>
                 </Routes>
                 <Footer />
