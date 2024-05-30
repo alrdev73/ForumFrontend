@@ -16,7 +16,7 @@ function App() {
                         <Route index element={<Home />}/>
                         <Route path={"about"} element={<About />}/>
                         <Route path={"*"} element={<NoPage />}/>
-                        <Route path={"viewforum/:forumId"} element={<ThreadList/>}/>
+                        <Route path={"viewforum/:forumId"} element={<ThreadList />}/>
                     </Route>
                 </Routes>
                 <Footer />

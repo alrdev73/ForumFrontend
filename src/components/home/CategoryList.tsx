@@ -1,12 +1,11 @@
 import {useEffect, useState} from "react";
-import SubforumList from "./SubforumList.tsx";
-import {SubforumListProp} from "./SubforumList.tsx"
+import SubforumList, {SubforumListProp} from "./SubforumList.tsx";
 
 export default function CategoryList() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/Categories")
+        fetch("https://localhost:44317/api/Category")
             .then((res) => {
                 console.log(res)
                 return res.json()
@@ -20,7 +19,7 @@ export default function CategoryList() {
     return (
         <div>
             {categories.map((category : SubforumListProp) =>
-                    <SubforumList name={category.name} subforums={category.subforums}/>
+                    <SubforumList name={category.name} categoryId={category.categoryId}/>
             )}
         </div>
     )
