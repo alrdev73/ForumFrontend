@@ -5,10 +5,11 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import NoPage from "./no-page/NoPage.tsx";
 import About from "./about/About.tsx";
 import ThreadList from "./subforum/ThreadList.tsx";
+import ThreadPage from "./thread/ThreadPage.tsx";
 
 function App() {
     return (
-        <div className="flex flex-col bg-cadet-gray h-screen overflow-hidden">
+        <div className="flex flex-col bg-neutral-50">
             <BrowserRouter>
                 <Header />
                 <Routes>
@@ -17,6 +18,7 @@ function App() {
                         <Route path={"about"} element={<About />}/>
                         <Route path={"*"} element={<NoPage />}/>
                         <Route path={"viewforum/:forumId"} element={<ThreadList />}/>
+                        <Route path={"viewthread/:threadId"} element={<ThreadPage />}/>
                     </Route>
                 </Routes>
                 <Footer />

@@ -23,12 +23,15 @@ export default function SubforumList(subforumListProp: SubforumListProp) {
 
     return (
         <div className={"px-4 py-2.5"}>
-            <div className={"relative rounded-t-lg py-2 flex bg-moonstone"}>
-                <h1 className={"px-2 flex-none text-xl"}>{subforumListProp.name}</h1>
-                <div className={"px-2 absolute flex flex-none w-1/3 right-0"}>
-                    <h1 className={"flex-none w-1/4 text-center"}>Replies</h1>
-                    <h1 className={"flex-none w-1/4 text-center"}>Threads</h1>
-                    <h1 className={"flex-none w-1/2 text-center"}>Last reply</h1>
+            <div className={"relative rounded-t-lg px-2 py-2 flex bg-sky-200 place-items-center"}>
+                <div className={"flex-col space-y-1"}>
+                    <h1 className={"flex-auto text-xl"}>{subforumListProp.name}</h1>
+                    <button className={"px-2 flex-auto bg-sky-300 rounded-lg"}>+ Add subforum</button>
+                </div>
+                <div className={"px-2 absolute flex w-1/3 right-0"}>
+                    <h1 className={"flex-auto w-1/4 text-center"}>Replies</h1>
+                    <h1 className={"flex-auto w-1/4 text-center"}>Threads</h1>
+                    <h1 className={"flex-auto w-1/2 text-center"}>Last reply</h1>
                 </div>
             </div>
             {
