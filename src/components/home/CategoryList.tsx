@@ -1,15 +1,12 @@
 import {useEffect, useState} from "react";
 import SubforumList, {SubforumListProp} from "./SubforumList.tsx";
+import {doGet} from "../../api.ts"
 
 export default function CategoryList() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch("https://localhost:44317/api/Category")
-            .then((res) => {
-                console.log(res)
-                return res.json()
-            })
+        doGet("https://localhost:443/api/Category")
             .then((data) => {
                 setCategories(data);
             })

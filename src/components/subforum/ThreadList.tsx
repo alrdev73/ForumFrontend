@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import ThreadListItem, {ThreadListItemProp} from "./ThreadListItem.tsx";
+import {doGet} from "../../api.ts"
 
 export default function ThreadList() {
     const {forumId} = useParams();
@@ -8,21 +9,13 @@ export default function ThreadList() {
     const [threads, setThreads] = useState([]);
     
     useEffect(() => {
-        fetch("https://localhost:44317/api/Subforum/Name/" + forumId)
-            .then((res) => {
-                console.log(res)
-                return res.json()
-            })
+        doGet("https://localhost:443/api/Subforum/Name/" + forumId)
             .then((data) => {
                 setSubforumName(data);
             })
             .catch((err) => console.error(err));
 
-        fetch("https://localhost:44317/api/Thread/" + forumId)
-            .then((res) => {
-                console.log(res)
-                return res.json()
-            })
+        doGet("https://localhost:443/api/Thread/" + forumId)
             .then((data) => {
                 setThreads(data);
             })
@@ -31,7 +24,8 @@ export default function ThreadList() {
     
     return (
         <div className={"px-4 py-2.5"}>
-            <div className={"relative rounded-t-lg px-2 py-2 flex bg-sky-200 place-items-center"}>
+            <div className="shadow rounded">
+                <div className={"relative rounded-t px-2 py-2 flex bg-sky-200 place-items-center"}>
                 <div className={"flex-col space-y-1"}>
                     <h1 className={"flex-none text-xl"}>{subforumName}</h1>
                     <button className={"px-2 flex-auto bg-sky-300 rounded-lg"}>+ Add thread</button>
@@ -51,6 +45,7 @@ export default function ThreadList() {
                                         replies={listItem.replies}
                                         views={listItem.views}/>
             )}
+            </div>
         </div>
     )
 }

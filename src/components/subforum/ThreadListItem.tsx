@@ -12,7 +12,7 @@ export interface ThreadListItemProp {
 
 export default function ThreadListItem({forumThreadId, name, description, author, date, replies, views}: ThreadListItemProp) {
     return (
-        <div className={"py-2 relative items-center odd:bg-neutral-200 even:bg-neutral-100 last:shadow-md last:rounded-b-lg flex"}>
+        <div className={"py-2 relative items-center odd:bg-neutral-200 even:bg-neutral-100 last:rounded-b flex"}>
             <div className={"px-2 flex items-center"}>
                 <img className={"max-w-12"} src={"/placeholder-subforum.jpg"} alt={"subforum image"}></img>
                 <div className={"px-2 flex-none"}>
