@@ -6,6 +6,7 @@ import NoPage from "./no-page/NoPage.tsx";
 import About from "./about/About.tsx";
 import ThreadList from "./subforum/ThreadList.tsx";
 import ThreadPage from "./thread/ThreadPage.tsx";
+import AddSubforum from "./add-subforum/AddSubforum.tsx";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                         <Route path={"*"} element={<NoPage />}/>
                         <Route path={"viewforum/:forumId"} element={<ThreadList />}/>
                         <Route path={"viewthread/:threadId"} element={<ThreadPage />}/>
+                        <Route path={"addsubforum"} element={<AddSubforum/>}/>
                     </Route>
                 </Routes>
                 <Footer />
